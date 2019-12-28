@@ -58,6 +58,7 @@ class App extends React.Component {
       .attr('fill', '#000')
       .attr('y', -40)
       .attr('x', -180)
+      .attr('dy', '0.71em')
       .attr('text-anchor', 'end')
       .text('Items (count)')
 
