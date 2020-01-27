@@ -19,35 +19,23 @@ const CampList = styled.section`
   height: 300px;
 `
 
-class BootcampsList extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
-    return (
-      <div>
-        <h1>Bootcamps</h1>
-        <CampList>
-          <SingleBootcamp />
-          <SingleBootcamp />
-          <SingleBootcamp />
-          <SingleBootcamp />
-          <SingleBootcamp />
-          <SingleBootcamp />
-          {/* {bootcamps.map((bootcamp) => {
-            return (
-              <div key={bootcamp.id}>
-                <input type="checkbox"></input>
-                {bootcamp.name}
-              </div>
-            )
-          })} */}
-        </CampList>
+const BootcampsList = (props) => {
+  return (
+    <div>
+      <h1>Bootcamps</h1>
+      <CampList>
+        {props.bootcamps ? (
+          props.bootcamps.map((bootcamp) => (
+            <SingleBootcamp key={bootcamp.id} bootcamp={bootcamp} toggleCamp={props.toggleCamp} />
+          ))
+        ) : (
+          <div>Loading...</div>
+        )}
+      </CampList>
 
-        <button>Get Graphs!</button>
-      </div>
-    )
-  }
+      <button>Get Graphs!</button>
+    </div>
+  )
 }
 
 export default BootcampsList

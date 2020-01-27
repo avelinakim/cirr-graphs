@@ -62,7 +62,7 @@ const pickColor = function(datum, rangeIndex) {
   else if (percentage <= 20 && percentage < 25) percentage = 22
   else percentage = 1
 
-  console.log('rangeIndex', rangeIndex, 'TCL: pickColor -> percentage', percentage)
+  // console.log('rangeIndex', rangeIndex, 'TCL: pickColor -> percentage', percentage)
   return LightenColor(color, percentage)
 }
 

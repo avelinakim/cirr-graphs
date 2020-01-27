@@ -6,7 +6,7 @@ const Container = styled.section`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 250px;
+  width: 480px;
   padding: 5px;
   margin: 5px;
 `
@@ -17,18 +17,18 @@ const Right = styled.section`
   flex: 3;
   // display: flex;
 `
-const CheckBox = styled.checkbox
+// const CheckBox = styled.checkbox
 
 const SingleBootcamp = (props) => {
   return (
     <Container>
       <Left>
-        <input type="checkbox" />
+        <input type="checkbox" onClick={(e) => props.toggleCamp(props.bootcamp, e)} />
       </Left>
       <Right>
-        <div>Fullstack Academy</div>
-        <div>Program</div>
-        <div>City</div>
+        <div>{props.bootcamp.company}</div>
+        <div>{props.bootcamp.program}</div>
+        <div>{props.bootcamp.location}</div>
       </Right>
     </Container>
   )
