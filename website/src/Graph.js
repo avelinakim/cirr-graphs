@@ -66,89 +66,90 @@ const pickColor = function(datum, rangeIndex) {
   return LightenColor(color, percentage)
 }
 
-class Graph extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>Victory Tutorial</h1>
-        <div style={{ padding: '15px', margin: '15px' }}>
-          <VictoryChart theme={VictoryTheme.material} domainPadding={30} padding={60}>
-            <VictoryAxis />
-            <VictoryAxis
-              dependentAxis
-              tickValues={[50000, 75000, 100000, 125000, 150000]}
-              tickFormat={(tick) => {
-                return `$${tick}`
+const Graph = (props) => {
+  return (
+    <div className="App">
+      {console.log('Props', props)}
+
+      <h1>Victory Tutorial</h1>
+      {props.bootcamps.length ? props.bootcamps.map((bootcamp) => <div>{bootcamp.program}</div>) : null}
+      <div style={{ padding: '15px', margin: '15px' }}>
+        <VictoryChart theme={VictoryTheme.material} domainPadding={30} padding={60}>
+          <VictoryAxis />
+          <VictoryAxis
+            dependentAxis
+            tickValues={[50000, 75000, 100000, 125000, 150000]}
+            tickFormat={(tick) => {
+              return `$${tick}`
+            }}
+          />
+
+          <VictoryStack colorScale="heatmap">
+            <VictoryBar
+              data={schoolsData}
+              x="name"
+              y={(datum) => datum.school[0].salaryRange[1] - datum.school[0].salaryRange[0]}
+              style={{
+                data: {
+                  fill: ({ datum }) => pickColor(datum, 0),
+                },
               }}
             />
-
-            <VictoryStack colorScale="heatmap">
-              <VictoryBar
-                data={schoolsData}
-                x="name"
-                y={(datum) => datum.school[0].salaryRange[1] - datum.school[0].salaryRange[0]}
-                style={{
-                  data: {
-                    fill: ({ datum }) => pickColor(datum, 0),
-                  },
-                }}
-              />
-              <VictoryBar
-                data={schoolsData}
-                x="name"
-                y={(datum) => datum.school[1].salaryRange[1] - datum.school[1].salaryRange[0]}
-                style={{
-                  data: {
-                    fill: ({ datum }) => pickColor(datum, 1),
-                  },
-                }}
-              />
-              <VictoryBar
-                data={schoolsData}
-                x="name"
-                y={(datum) => datum.school[2].salaryRange[1] - datum.school[2].salaryRange[0]}
-                style={{
-                  data: {
-                    fill: ({ datum }) => pickColor(datum, 2),
-                  },
-                }}
-              />
-              <VictoryBar
-                data={schoolsData}
-                x="name"
-                y={(datum) => datum.school[3].salaryRange[1] - datum.school[3].salaryRange[0]}
-                style={{
-                  data: {
-                    fill: ({ datum }) => pickColor(datum, 3),
-                  },
-                }}
-              />
-              <VictoryBar
-                data={schoolsData}
-                x="name"
-                y={(datum) => datum.school[4].salaryRange[1] - datum.school[4].salaryRange[0]}
-                style={{
-                  data: {
-                    fill: ({ datum }) => pickColor(datum, 4),
-                  },
-                }}
-              />
-              <VictoryBar
-                data={schoolsData}
-                x="name"
-                y={(datum) => datum.school[5].salaryRange[1] - datum.school[5].salaryRange[0]}
-                style={{
-                  data: {
-                    fill: ({ datum }) => pickColor(datum, 5),
-                  },
-                }}
-              />
-            </VictoryStack>
-          </VictoryChart>
-        </div>
+            <VictoryBar
+              data={schoolsData}
+              x="name"
+              y={(datum) => datum.school[1].salaryRange[1] - datum.school[1].salaryRange[0]}
+              style={{
+                data: {
+                  fill: ({ datum }) => pickColor(datum, 1),
+                },
+              }}
+            />
+            <VictoryBar
+              data={schoolsData}
+              x="name"
+              y={(datum) => datum.school[2].salaryRange[1] - datum.school[2].salaryRange[0]}
+              style={{
+                data: {
+                  fill: ({ datum }) => pickColor(datum, 2),
+                },
+              }}
+            />
+            <VictoryBar
+              data={schoolsData}
+              x="name"
+              y={(datum) => datum.school[3].salaryRange[1] - datum.school[3].salaryRange[0]}
+              style={{
+                data: {
+                  fill: ({ datum }) => pickColor(datum, 3),
+                },
+              }}
+            />
+            <VictoryBar
+              data={schoolsData}
+              x="name"
+              y={(datum) => datum.school[4].salaryRange[1] - datum.school[4].salaryRange[0]}
+              style={{
+                data: {
+                  fill: ({ datum }) => pickColor(datum, 4),
+                },
+              }}
+            />
+            <VictoryBar
+              data={schoolsData}
+              x="name"
+              y={(datum) => datum.school[5].salaryRange[1] - datum.school[5].salaryRange[0]}
+              style={{
+                data: {
+                  fill: ({ datum }) => pickColor(datum, 5),
+                },
+              }}
+            />
+          </VictoryStack>
+        </VictoryChart>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default Graph
