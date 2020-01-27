@@ -71,7 +71,7 @@ class Graph extends React.Component {
     return (
       <div className="App">
         <h1>Victory Tutorial</h1>
-        <div style={{ padding: '50px', margin: '50px' }}>
+        <div style={{ padding: '15px', margin: '15px' }}>
           <VictoryChart theme={VictoryTheme.material} domainPadding={30} padding={60}>
             <VictoryAxis />
             <VictoryAxis
