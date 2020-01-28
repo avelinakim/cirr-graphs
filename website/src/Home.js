@@ -77,8 +77,8 @@ const testBootcamps = [
   },
   {
     id: 5,
-    company: 'Codesmith',
-    program: 'Full-Stack Web Development',
+    company: 'Fullstack Academy',
+    program: 'Fullstack Academy',
     location: 'New York City',
     median: 112500,
     salaryRanges: [
@@ -88,6 +88,21 @@ const testBootcamps = [
       { salaryRange: [120000, 130000], percentage: 9.4 },
       { salaryRange: [130000, 140000], percentage: 12.5 },
       { salaryRange: [140000, 150000], percentage: 25.0 },
+    ],
+  },
+  {
+    id: 6,
+    company: 'Codesmith',
+    program: 'Full-Stack Web Development',
+    location: 'New York City',
+    median: 112500,
+    salaryRanges: [
+      { salaryRange: [0, 60000], percentage: 15.7 },
+      { salaryRange: [60000, 70000], percentage: 2.4 },
+      { salaryRange: [70000, 80000], percentage: 9.6 },
+      { salaryRange: [80000, 90000], percentage: 19.3 },
+      { salaryRange: [90000, 100000], percentage: 14.5 },
+      { salaryRange: [100000, 150000], percentage: 38.6 },
     ],
   },
 ]
