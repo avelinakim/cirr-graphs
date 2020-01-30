@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme, VictoryStack } from 'victory'
+import styled from 'styled-components'
 
 const LightenColor = function(color, percent) {
   const num = parseInt(color, 16)
@@ -47,12 +48,12 @@ class Graph extends React.Component {
     })
 
     return (
-      <div className="App">
+      <div className="graph">
         <h1>Salary Comparison</h1>
         {this.props.bootcamps.length
           ? this.props.bootcamps.map((bootcamp, i) => (
               <div key={bootcamp.id}>
-                {schoolsData[i].name} - {bootcamp.program}
+                {schoolsData[i].name} - {bootcamp.company}: {bootcamp.program}
               </div>
             ))
           : null}

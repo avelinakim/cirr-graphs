@@ -117,9 +117,10 @@ const scrapePDFs = async () => {
   // console.log('Child', child)
 }
 
-scrapePDFs()
+// scrapePDFs()
+downloadPDFs()
 
 // java -jar ./node_modules/tabula-js/lib/tabula-java.jar ./PDFs/Hack\ Reactor\ San\ Francisco\ H1\ 2018.pdf --format JSON --pages 2 >> example.json
 
-const filePaths = fs.readdirSync('./filtered-PDFs').map((name) => `./filtered-PDFs/${name}`)
-console.log(filePaths)
+// const filePaths = fs.readdirSync('./filtered-PDFs').map((name) => `./filtered-PDFs/${name}`)
+// console.log(filePaths)

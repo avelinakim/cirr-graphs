@@ -6,15 +6,15 @@ const Container = styled.section`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 480px;
+  width: 400px;
   padding: 5px;
-  margin: 5px;
+  margin: auto;
 `
 const Left = styled.section`
   flex: 1;
 `
 const Right = styled.section`
-  flex: 3;
+  flex: 8;
   // display: flex;
 `
 // const CheckBox = styled.checkbox
