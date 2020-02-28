@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme, VictoryStack } from 'victory'
+import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme, VictoryStack, VictoryTooltip } from 'victory'
 import styled from 'styled-components'
 
 const LightenColor = function(color, percent) {
@@ -78,6 +78,17 @@ class Graph extends React.Component {
                     fill: ({ datum }) => pickColor(datum, 0),
                   },
                 }}
+                labels={() => 'hello'}
+                labelComponent={
+                  <VictoryTooltip
+                    center={{ x: 225, y: 30 }}
+                    pointerOrientation="bottom"
+                    flyoutWidth={150}
+                    flyoutHeight={50}
+                    pointerWidth={150}
+                    cornerRadius={0}
+                  />
+                }
               />
               <VictoryBar
                 data={schoolsData}
